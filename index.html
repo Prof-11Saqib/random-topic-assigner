@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Topic Assigner</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        #topic {
+            font-size: 3rem; /* Large font size */
+            color: #4a90e2; /* Initial color */
+            text-align: center;
+            animation: pop 0.8s ease-out, colorChange 5s infinite; /* Animation */
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes colorChange {
+            0%, 100% {
+                color: #4a90e2; /* Blue */
+            }
+            25% {
+                color: #50e3c2; /* Teal */
+            }
+            50% {
+                color: #f5a623; /* Orange */
+            }
+            75% {
+                color: #d0021b; /* Red */
+            }
+        }
+    </style>
+    <script>
+        function assignTopic() {
+            const topics = [
+                "True Meaning of Iman",
+                "True Meaning of Ibadah",
+                "Meaning and Blessings of the Prayer",
+                "True Spirit of the Fasting",
+                "Fundamental Importance of Zakah",
+                "Life and Mission of the Prophet Ibrahim(a.s)",
+                "Oneness of Allah (Tawheed)",
+                "The Quran: The Base of Islam",
+                "The Life of Prophet Muhammad (PBUH): Focus on key events such as his early life, the first revelation, and the migration to Medina (Hijra). This can be an inspiring topic highlighting lessons from his life.",
+                "The Five Pillars of Islam",
+                "The Importance of Seeking Knowledge:",
+            ];
+            const randomIndex = Math.floor(Math.random() * topics.length);
+            document.getElementById("topic").innerText = "Your assigned topic is: " + topics[randomIndex];
+        }
+    </script>
+</head>
+<body onload="assignTopic()">
+    <div id="topic"></div>
+</body>
+</html>
